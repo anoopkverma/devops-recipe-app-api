@@ -7,12 +7,12 @@ terraform {
   }
 
   backend "s3" {
-    bucket               = "devops-recipe-app-api-state"
+    bucket               = "ak-test-app-tf-state"
     key                  = "tf-state-deploy"
     workspace_key_prefix = "tf-state-deploy-env"
-    region               = "us-east-1"
+    region               = "ap-southeast-2"
     encrypt              = true
-    dynamodb_table       = "devops-recipe-app-api-tf-lock"
+    dynamodb_table       = "ak-test-app-tf-state-lock"
   }
 }
 
@@ -29,7 +29,7 @@ provider "aws" {
 }
 
 locals {
-  prefix = "${var.prefix}-${terraform.workspace}"
+  prefix = "${var.prefix}-${terraform.workspace}" // just like prefix_envirionment. eg aws_prod | ocf_stage
 }
 
 data "aws_region" "current" {}

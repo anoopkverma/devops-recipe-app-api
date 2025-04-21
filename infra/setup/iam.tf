@@ -258,7 +258,7 @@ resource "aws_iam_user_policy_attachment" "iam" {
   policy_arn = aws_iam_policy.iam.arn
 }
 
-################################
+#################################
 # Policy for CloudWatch access #
 #################################
 
