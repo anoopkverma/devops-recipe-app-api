@@ -7,23 +7,23 @@ terraform {
   }
 
   backend "s3" {
-    bucket               = "ak-test-app-tf-state"
-    key                  = "tf-state-deploy"
-    region               = "ap-southeast-2"
-    encrypt              = true
-    dynamodb_table       = "ak-test-app-tf-state-lock"
+    bucket         = "ak-test-app-tf-state"
+    key            = "tf-state-setup"
+    region         = "ap-southeast-2"
+    encrypt        = true
+    dynamodb_table = "ak-test-app-tf-state-lock"
   }
 }
 
 provider "aws" {
   region = "us-east-1"
+
   default_tags {
     tags = {
       Environment = terraform.workspace
       Project     = var.project
       Contact     = var.contact
-      ManageBy    = "Terraform/deploy"
+      ManageBy    = "Terraform/setup"
     }
   }
 }
-
