@@ -260,7 +260,7 @@ resource "aws_iam_user_policy_attachment" "iam" {
 
 ################################
 # Policy for CloudWatch access #
-################################
+#################################
 
 data "aws_iam_policy_document" "logs" {
   statement {
