@@ -7,11 +7,11 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "ak-test-app-tf-state"
+    bucket         = "-1ak-test-app-tf-state"
     key            = "tf-state-setup"
-    region         = "ap-southeast-2"
+    region         = "us-east-1"
     encrypt        = true
-    dynamodb_table = "ak-test-app-tf-state-lock"
+    dynamodb_table = "ak-test-app-tf-state-lock-1"
   }
 }
 
